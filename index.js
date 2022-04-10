@@ -35,6 +35,7 @@ function computadorComeca() {
 
 function voceComeca() {
 	lacoNoQuadrado(quadrado);
+   //jogaComputador(quadrado);
 }
 
 function recomecar() {
@@ -43,25 +44,6 @@ function recomecar() {
 
 
 
-
-function lacoNoQuadrado(quadrado) {
-	quadrado.forEach((box) =>
-		box.addEventListener("click", () => {
-			if (box.textContent === "") {
-				box.textContent = "X";
-				jogaComputador(quadrado);
-				numJogadas++;
-			}
-			verificarVencendor();
-		})
-	);
-}
-
-
-function gerarNumeroRandom() {
-	const numRandom = Math.floor(Math.random() * 9);
-	return numRandom;
-}
 
 function jogaComputador(quadrado) {
 	verificarVencendor();
@@ -82,6 +64,32 @@ function jogaComputador(quadrado) {
 		}
 	}
 }
+
+function lacoNoQuadrado(quadrado) {
+	quadrado.forEach((box) =>
+		box.addEventListener("click", () => {
+			if (box.textContent === "") {
+				box.textContent = "X";
+				jogaComputador(quadrado);
+				verificarVencendor();
+            if (numJogadas === 9) {
+					alert("EMPATEE!!");
+					location.reload();
+				}
+            numJogadas++;
+			}
+         verificarVencendor();
+		})
+	);
+}
+
+
+function gerarNumeroRandom() {
+	const numRandom = Math.floor(Math.random() * 9);
+	return numRandom;
+}
+
+
 
 
 
