@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="style.css">
+   <title>Document</title>
+</head>
+<body>
+   
+   <div class="tabuleiro">
+      <div class="linha">
+         <div class="quadrado" id="qrd1"></div>
+         <div class="quadrado" id="qrd2"></div>
+         <div class="quadrado" id="qrd3"></div>
+      </div>
+      <div class="linha">
+         <div class="quadrado" id="qrd4"></div>
+         <div class="quadrado" id="qrd5"></div>
+         <div class="quadrado" id="qrd6"></div>
+      </div>
+      <div class="linha">
+         <div class="quadrado" id="qrd7"></div>
+         <div class="quadrado" id="qrd8"></div>
+         <div class="quadrado" id="qrd9"></div>
+      </div>
+   </div>
+
+
+   <!-- <div>
+      <button class="jogada" value="pToC">Jogar contra outro jogador</button>
+      <button class="jogada" value="cToP">Jogar contra computador e ele começa</button>
+      <button class="jogada" value="pToC">Jogar contra computador e você começa</button>
+   </div> -->
+   <div>
+      <button onclick="jogadorContraJogador()">Jogar contra outro jogador</button>
+      <button onclick="computadorComeca()">Jogar contra computador e ele começa</button>
+      <button onclick="voceComeca()">Jogar contra computador e você começa</button>
+      <button onclick="recomecar()">Recomeçar</button>
+   </div>
+ <script src="./index.js"></script>
+</body>
+</html>
