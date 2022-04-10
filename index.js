@@ -30,11 +30,11 @@ function jogadorContraJogador() {
 
 function computadorComeca() {
 	jogaComputador(quadrado);
-	lacoNoQuadrado(quadrado);
+	lacoNoTabuleiro(quadrado);
 }
 
 function voceComeca() {
-	lacoNoQuadrado(quadrado);
+	lacoNoTabuleiro(quadrado);
    //jogaComputador(quadrado);
 }
 
@@ -65,7 +65,7 @@ function jogaComputador(quadrado) {
 	}
 }
 
-function lacoNoQuadrado(quadrado) {
+function lacoNoTabuleiro(quadrado) {
 	quadrado.forEach((box) =>
 		box.addEventListener("click", () => {
 			if (box.textContent === "") {
