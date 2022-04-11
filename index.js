@@ -29,12 +29,12 @@ function jogadorContraJogador() {
 }
 
 function computadorComeca() {
-	jogaComputador(quadrado);
-	lacoNoTabuleiro(quadrado);
+	jogaComputador(quadrado, "O");
+	lacoNoTabuleiro(quadrado, "X");
 }
 
 function voceComeca() {
-	lacoNoTabuleiro(quadrado);
+	lacoNoTabuleiro(quadrado, "O");
    //jogaComputador(quadrado);
 }
 
@@ -45,13 +45,13 @@ function recomecar() {
 
 
 
-function jogaComputador(quadrado) {
+function jogaComputador(quadrado, letra) {
 	verificarVencendor();
 	for (let i = 0; i < 1; i++) {
 		let number = gerarNumeroRandom();
 		if (quadrado[number].textContent === "") {
 			setTimeout(() => {
-				quadrado[number].textContent = "O";
+				quadrado[number].textContent = letra;
 				verificarVencendor();
 				if (numJogadas === 9) {
 					alert("EMPATEE!!");
@@ -65,12 +65,12 @@ function jogaComputador(quadrado) {
 	}
 }
 
-function lacoNoTabuleiro(quadrado) {
+function lacoNoTabuleiro(quadrado, letra) {
 	quadrado.forEach((box) =>
 		box.addEventListener("click", () => {
 			if (box.textContent === "") {
-				box.textContent = "X";
-				jogaComputador(quadrado);
+				box.textContent = letra;
+				jogaComputador(quadrado, "X");
 				verificarVencendor();
             if (numJogadas === 9) {
 					alert("EMPATEE!!");
